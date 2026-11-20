@@ -1,6 +1,6 @@
-# Landing Page Builder
+# Outlanding
 
-A Claude plugin that builds landing pages that convert, in **any niche**, with one formula:
+Outlanding builds landing pages that beat your competitors'. It tears down their real landing pages, takes what works, and builds yours to a higher bar, in **any niche**, with one formula:
 
 > **our structure × competitors' best practices, built to the reference standard**
 
