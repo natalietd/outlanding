@@ -4,13 +4,6 @@ Outlanding builds landing pages that beat your competitors'. It tears down their
 
 > **our structure × competitors' best practices, built to the reference standard**
 
-It ships two skills with the same method, one per language:
-
-| Skill | Language |
-|---|---|
-| `landing-page-builder` | English |
-| `landing-page-builder-ru` | Русский |
-
 ## What it does
 
 - **Structure.** Every page covers five jobs: first screen, pains (only if competitors use a pains block), benefits, product, and offer & CTA. There are two CTA types, into the product or book a call. It never builds lead or quiz forms.
@@ -62,8 +55,7 @@ https://github.com/natalietd/landing-page-builder.
 ```
 .claude-plugin/plugin.json
 skills/
-├── landing-page-builder/        # English
-└── landing-page-builder-ru/     # Русский
+└── landing-page-builder/
     ├── SKILL.md                 # workflow, structure, base rules
     ├── references/              # brief, competitor research, framework, reference standard,
     │                            # redesign (mode B), visual system, build, browser checks + QA gate,

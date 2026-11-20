@@ -2,7 +2,7 @@
   "name": "outlanding",
   "displayName": "Outlanding",
   "version": "1.0.0",
-  "description": "Outlanding builds landing pages that beat your competitors': it tears down their real landing pages, takes what works, and builds yours to a higher bar — any niche, from scratch or as a redesign. Ends with an automatic QA gate and an SEO/GEO go-live checklist. English and Russian.",
+  "description": "Outlanding builds landing pages that beat your competitors': it tears down their real landing pages, takes what works, and builds yours to a higher bar — any niche, from scratch or as a redesign. Ends with an automatic QA gate and an SEO/GEO go-live checklist.",
   "author": {
     "name": "Natalia Tereshina",
     "url": "https://github.com/natalietd"
@@ -16,7 +16,6 @@
     "copywriting",
     "web design",
     "competitor research",
-    "seo",
-    "лендинг"
+    "seo"
   ]
 }
