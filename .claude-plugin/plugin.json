@@ -1,0 +1,14 @@
+{
+  "name": "landing-page-builder",
+  "displayName": "Landing Page Builder",
+  "version": "1.0.0",
+  "description": "Builds high-converting landing pages for any niche: our 5-block structure × the best practices of competitors' real landing pages, built to a reference quality bar. Builds from scratch or redesigns an existing page, then checks it with an automatic QA gate and an SEO/GEO go-live checklist. English and Russian.",
+  "author": {
+    "name": "Natalia Tereshina",
+    "url": "https://github.com/natalietd"
+  },
+  "homepage": "https://github.com/natalietd/landing-page-builder",
+  "repository": "https://github.com/natalietd/landing-page-builder",
+  "license": "MIT",
+  "keywords": ["landing page", "conversion", "copywriting", "web design", "competitor research", "seo", "лендинг"]
+}
