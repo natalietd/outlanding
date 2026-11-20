@@ -11,7 +11,7 @@ owner as good landing pages. Use them in both modes (scratch and redesign).
 | **U** | https://ups-fit.ru/ | App for personal trainers (RU) | Dark + light cards, lime accent, mascot | Device trio hero, 4 phones = 4 steps, feature zigzag with real screens, benefits recap before tariffs |
 | **S** | https://saytext.ru | Audio → text transcription (RU) | White, violet accent, line illustrations | Upload widget in hero, mini-UI per step, interactive example of the result, monthly/yearly toggle |
 
-To look at them again: `node ${CLAUDE_SKILL_DIR}/scripts/capture.mjs --out research/reference <url>…`
+To look at them again, capture them as in `browser-checks.md` §1.
 Take **patterns and craft**, never their copy, numbers, assets or brand.
 
 ## 1. What all four do (non-negotiable bar)

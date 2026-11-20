@@ -25,7 +25,7 @@ A structural gap (no pains *while the competitors have them*, no how-it-works, C
 | # | Phase | Output |
 |---|-------|--------|
 | 0 | **Work on a copy** if the page is live/deployed: keep `before.html` untouched, build in `index.html` next to it; replace the live file only on the owner's OK | `before.html` + working copy |
-| 1 | **Capture the current page**: `capture.mjs` on the live URL or `file://…/before.html` | `research/before/` sections + `page.json` |
+| 1 | **Capture the current page**: `browser-checks.md` §1 on the live URL or `file://…/before.html` | `research/before/` section shots + structure notes |
 | 2 | **Audit**: score every section against the house structure (5 jobs + base rules) and the reference standard (`reference-standard.md` §1 bar, §2 patterns, §3–4 craft) | Audit table |
 | 3 | **Competitor check** (2–3 pages, required): the niche look, how they show the product, whether they use a pains block. It feeds the **new** visual system | 3–5 lines in the audit + a new visual lock |
 | 4 | **Redesign plan**: per section, keep / restyle / re-pattern + the chosen pattern + the visual lock → **checkpoint with the owner** | Plan table |

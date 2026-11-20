@@ -26,7 +26,7 @@ There are two modes:
 1. **Build from scratch.** Brief → competitor capture → teardown → page plan (you approve it) → build → QA on desktop and mobile.
 2. **Improve the design** of an existing landing. Capture the current page → audit → plan a new look that keeps your facts, copy and logo → you approve it → edit → compare before and after.
 
-Before the page goes live, it runs an automatic QA gate (`scripts/qa.mjs`) and an SEO and GEO checklist covering one address, robots.txt, the sitemap, llms.txt, Open Graph, JSON-LD and speed.
+Before the page goes live, it runs a QA gate in the browser and an SEO and GEO checklist covering one address, robots.txt, the sitemap, llms.txt, Open Graph, JSON-LD and speed.
 
 ## Use
 
@@ -38,30 +38,24 @@ Ask Claude as you normally would:
 
 ## What the plugin runs, fetches and sends
 
-The skills are mostly instructions and reference files. Two optional Node.js scripts sit in each skill's `scripts/` folder:
+The plugin is instructions and reference files only. It contains **no scripts, no executables and
+no dependencies**.
 
-| Script | What it does | Network |
-|---|---|---|
-| `capture.mjs` | Opens the URLs **you give it** (competitor pages, or your own page) in a local headless browser. It saves screenshots and a JSON summary of each page's structure into a local folder (`research/` by default). | Loads only the URLs passed to it, plus whatever those pages load themselves. |
-| `qa.mjs` | Opens **your** page (a URL or a local `file://` path) in a local headless browser and prints a report: broken or dev links, forms, headings, repeated copy, image problems, footer and mobile header. | Loads only the URL passed to it. |
+- **Browsing.** To study competitors and to check your page, Claude uses the browser tools already
+  in your session (a built-in browser, Claude in Chrome, or a browser MCP). It opens only the
+  competitor pages it finds through its own web search, the URLs you give it, and your own page.
+  It takes screenshots and reads page structure. It never accepts cookie banners and never enters
+  credentials.
+- **Nothing is sent anywhere.** The plugin makes no API calls of its own and has no telemetry.
+  Screenshots and notes stay in your conversation or in local files you choose (`research/` by
+  default).
+- **No credentials.** It reads no API keys or tokens and stores no personal data.
+- **Optional tools you run yourself.** The go-live checklist (`references/seo-geo.md`) links to
+  PageSpeed Insights, Lighthouse and the Tailwind CLI documentation. Nothing is installed by the
+  plugin.
 
-- **Nothing is sent anywhere.** The scripts make no API calls and include no analytics or telemetry. They don't upload screenshots or reports; all output stays on your machine.
-- **Dependency.** The scripts need [Playwright](https://playwright.dev), pinned in `scripts/package.json`. You install it once:
-
-  ```bash
-  npm install --prefix "${CLAUDE_SKILL_DIR}/scripts"
-  ```
-
-  If no browser is installed, the scripts fall back to the system Chrome or Edge, or you can download Playwright's Chromium:
-
-  ```bash
-  npx --prefix "${CLAUDE_SKILL_DIR}/scripts" playwright install chromium
-  ```
-
-- **No credentials.** The plugin reads no API keys or tokens and stores no personal data.
-- **Optional tools in the go-live checklist.** `references/seo-geo.md` suggests you run Lighthouse (`npx lighthouse@13.6.0`) and the Tailwind CLI (`npx tailwindcss@3.4.16`) on your own page. Claude runs them only as part of that step, with your approval.
-
-Web searches for competitors go through Claude's own search tools, not through these scripts.
+The standalone version of the skill, with optional Node scripts for capture and QA, lives at
+https://github.com/natalietd/landing-page-builder.
 
 ## Files
 
@@ -72,9 +66,9 @@ skills/
 └── landing-page-builder-ru/     # Русский
     ├── SKILL.md                 # workflow, structure, base rules
     ├── references/              # brief, competitor research, framework, reference standard,
-    │                            # redesign (mode B), visual system, build + QA, SEO + GEO, examples
-    ├── templates/teardown.md    # teardown file to fill
-    └── scripts/                 # capture.mjs, qa.mjs, package.json
+    │                            # redesign (mode B), visual system, build, browser checks + QA gate,
+    │                            # SEO + GEO, examples
+    └── templates/teardown.md    # teardown file to fill
 ```
 
 ## License

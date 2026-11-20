@@ -89,13 +89,15 @@
 
 ## 9. Скорость и мобильная версия
 
-Цель в Lighthouse на мобильном: LCP меньше 2,5 с, CLS меньше 0,1, INP меньше 200 мс. Запусти
-`npx lighthouse@13.6.0 <url> --only-categories=performance,seo,accessibility,best-practices`. У API
-PageSpeed часто кончается квота, поэтому запускай Lighthouse локально.
+Цель в Lighthouse на мобильном: LCP меньше 2,5 с, CLS меньше 0,1, INP меньше 200 мс. Измеряй в
+[PageSpeed Insights](https://pagespeed.web.dev). Если у него кончилась квота, используй Lighthouse в
+Chrome DevTools или его CLI ([установка](https://developer.chrome.com/docs/lighthouse/overview)) с
+категориями performance, SEO, accessibility и best-practices.
 
 - **Tailwind:** Play CDN (`cdn.tailwindcss.com`) только для прототипа. Перед публикацией собери
-  CSS через `npx tailwindcss@3.4.16 -i in.css -o site.css --minify`, `content` указывает на
-  страницу. Встрой его в `<style>`, если он меньше примерно 20 КБ, иначе подключи файлом. Потом
+  CSS через Tailwind CLI той же мажорной версии, что и CDN
+  ([установка](https://tailwindcss.com/docs/installation/tailwind-cli)), с минификацией; `content`
+  указывает на страницу. Встрой его в `<style>`, если он меньше примерно 20 КБ, иначе подключи файлом. Потом
   убери скрипт CDN и сравни скриншоты до и после.
 - **Картинки:** WebP примерно в 2× от самого большого размера, в котором они показываются.
   Скриншот телефона шириной около 300 px становится WebP на 600 px. Если `cwebp` или `sharp` не

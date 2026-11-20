@@ -28,7 +28,7 @@ Quality bar: the owner should be able to ship it after small edits — no struct
 - Benefits restated right before the offer.
 - **Say each fact once, where it does its job.** Trial terms live in the hero CTA microcopy and the
   offer card, nowhere else. Accepted inputs, formats and specs live in one block. A phrase that shows
-  up 3+ times is filler: `qa.mjs` fails it. Don't restate the hero promise as another block's
+  up 3+ times is filler: the QA gate fails it. Don't restate the hero promise as another block's
   headline. The offer H2 sells the deal (the free days, what you get for the price), not the
   feature again.
 - **Eyebrow = a short label** (≤ ~5 words, one line on mobile). The avatar sentence goes in the lead
@@ -84,7 +84,7 @@ const PRODUCT_URL = "TODO_REPLACE_ME"; // or BOOKING_URL for book-a-call
 - **Every link goes where its label says.** "Start", "Create" and "Get" buttons open the product
   (`PRODUCT_URL`). A button that only scrolls to pricing says so ("See plans"). Never ship a dev or
   placeholder address (`localhost`, `127.0.0.1`, staging, `TODO`) in a link or a form `action`:
-  `qa.mjs` fails it.
+  the QA gate fails it.
 - **A product input on the page** (describe / paste / upload) is allowed only as a hand-off into the
   product. Put it in the hero, or in its own block with a headline and one line on what happens after
   submit. It submits to `PRODUCT_URL` and carries `data-product-input`. Never an orphan textarea
@@ -104,8 +104,7 @@ Plan card, top to bottom: name → price → what's included → CTA → microco
 
 ## 6. QA — in the browser, before handoff
 
-**Run the automatic gate first:** `node ${CLAUDE_SKILL_DIR}/scripts/qa.mjs <url or file:///…/index.html>`.
-It fails:
+**Run the QA gate first** (`browser-checks.md` §2). It fails:
 - dev links and custom forms;
 - label H2s and repeated phrases;
 - dark slabs on a light page;
@@ -119,12 +118,11 @@ It warns about:
 - SEO gaps.
 
 **0 FAIL before anything else.** Read every WARN and fix or justify it. Then do the checks below by
-eye: the script can't judge taste.
+eye: the gate can't judge taste.
 
 Open the page (desktop ~1440px, then 375px). Click through every section, not just the hero.
-Fastest way to compare: run the capture script on our own page too
-(`node ${CLAUDE_SKILL_DIR}/scripts/capture.mjs --out research/qa "file://$PWD/index.html"`) and look at our
-`sections/NN.png` next to the competitors'. In the browser also check: no horizontal scroll at
+Fastest way to compare: capture our own page the same way (`browser-checks.md` §1) and look at our
+section shots next to the competitors'. In the browser also check: no horizontal scroll at
 375px, no console errors.
 
 **Against the plan**

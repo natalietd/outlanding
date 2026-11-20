@@ -87,12 +87,14 @@ really say. Never add ratings, reviews, user counts or prices that don't exist.
 
 ## 9. Speed and mobile
 
-The target on mobile Lighthouse is LCP under 2.5 s, CLS under 0.1 and INP under 200 ms. Run
-`npx lighthouse@13.6.0 <url> --only-categories=performance,seo,accessibility,best-practices`. The
-PageSpeed API often runs out of quota, so run Lighthouse locally.
+The target on mobile Lighthouse is LCP under 2.5 s, CLS under 0.1 and INP under 200 ms. Measure with
+[PageSpeed Insights](https://pagespeed.web.dev). If its quota runs out, use Lighthouse in Chrome
+DevTools or its CLI ([setup](https://developer.chrome.com/docs/lighthouse/overview)), with the
+performance, SEO, accessibility and best-practices categories.
 
 - **Tailwind:** the Play CDN (`cdn.tailwindcss.com`) is for prototypes only. Before going live, compile
-  the CSS with `npx tailwindcss@3.4.16 -i in.css -o site.css --minify`, with `content`
+  the CSS with the Tailwind CLI, same major version as the CDN
+  ([setup](https://tailwindcss.com/docs/installation/tailwind-cli)), minified, with `content`
   pointing at the page. Inline it in a `<style>` tag if it's under about 20 KB, otherwise link it.
   Then remove the CDN script and compare screenshots before and after.
 - **Images:** use WebP at about 2× the largest size they're shown at. A phone screenshot shown

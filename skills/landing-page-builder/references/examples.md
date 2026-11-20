@@ -78,7 +78,7 @@ another niche gets its own design from its topic and competitors.
 
 ## E. Anti-example: AI presentation editor (aideck, 2026-11-18) — what went wrong
 
-A page built with an earlier version of this skill. `qa.mjs` on it: 8 FAIL, 11 WARN. Every item
+A page built with an earlier version of this skill. The QA gate on it: 8 FAIL, 11 WARN. Every item
 below is now a rule (`build.md` §2–4, §6) and most are caught automatically.
 
 - **The main CTA went to a dev address.** "Начать работу" and the idea form pointed at

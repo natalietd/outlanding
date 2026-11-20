@@ -41,20 +41,15 @@ Capture the market version that matches ours (same language/country when it exis
 
 ## 3. Capture
 
-Run the script (screenshots per section + structured extraction):
+Capture every competitor with the browser tools, following `browser-checks.md` §1: section
+screenshots at 1440px and 390px, plus the structure (headings, CTA texts and destinations, prices,
+proof signals, fonts, colors). **Look at the screenshots.** The text tells you the structure, the
+images tell you the quality.
 
-```bash
-node ${CLAUDE_SKILL_DIR}/scripts/capture.mjs --out research/competitors <url1> <url2> <url3>
-```
-
-It writes per competitor: `full.png`, `mobile.png`, `sections/NN.png`, and `page.json` (section
-outline, headings, CTA texts, prices, proof signals, fonts, colors). **Look at the screenshots** —
-the JSON tells structure, the images tell quality; the "primary CTA" and colors are heuristics.
-
-Some sites will fail (timeouts, geo-blocking, certificates the browser doesn't trust — common for
-RU sites on the national CA). Then: try the browser tools (screenshot + read the page), or a web
-fetch for text only; if still nothing, swap in the next competitor. Never weaken TLS or security
-settings to get a capture. Record failed sites in the teardown so the owner knows the set.
+Some sites will fail (timeouts, geo-blocking, certificates the browser doesn't trust, common for
+Russian sites on the national CA). Then use a web fetch for the text only. If that gets nothing
+either, swap in the next competitor. Never weaken TLS or security settings to get a capture.
+Record failed sites in the teardown so the owner knows the set.
 
 Competitor screenshots are research material. They never go on our page.
 
