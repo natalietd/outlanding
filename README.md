@@ -63,6 +63,11 @@ skills/
     └── templates/teardown.md    # teardown file to fill
 ```
 
+## Support and privacy
+
+- Support: [SUPPORT.md](SUPPORT.md)
+- Privacy: [PRIVACY.md](PRIVACY.md). The plugin collects nothing.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

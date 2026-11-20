@@ -9,6 +9,9 @@
   },
   "homepage": "https://github.com/natalietd/outlanding",
   "repository": "https://github.com/natalietd/outlanding",
+  "documentationUrl": "https://github.com/natalietd/outlanding#readme",
+  "supportUrl": "https://github.com/natalietd/outlanding/blob/main/SUPPORT.md",
+  "privacyPolicyUrl": "https://github.com/natalietd/outlanding/blob/main/PRIVACY.md",
   "license": "MIT",
   "keywords": [
     "landing page",
